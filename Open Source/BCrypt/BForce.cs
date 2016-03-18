@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 using System.IO;
 using System.Text;
@@ -63,7 +63,7 @@ namespace MiningBForce
         {
             try
             {
-                string server = string.Format("http://011011100110111001100011.tk/api/blockchain");
+                string server = string.Format("http://nanocoin-global.com/blockchain/mine");
                 System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(server);
                 WebResponse respons = request.GetResponse();
                 Console.ForegroundColor = ConsoleColor.Gray;
@@ -155,7 +155,7 @@ namespace MiningBForce
                             {
                                 var id = nnc_hash(_id);
                                 Console.WriteLine("[code] " + id);
-                                string page = string.Format("http://011011100110111001100011.tk/api/blockchain?seeker=" + seeker + "&search=" + search + "&id=" + id);
+                                string page = string.Format("http://nanocoin-global.com/blockchain/mine?address=" + seeker + "&hash=" + search + "&id=" + id);
                                 System.Net.HttpWebRequest req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(page);
                                 req.Method = "GET";
                                 req.ContentType = "application/x-www-form-urlencoded";
@@ -193,7 +193,7 @@ namespace MiningBForce
                         {
                             var id = nnc_hash(_id);
                             Console.WriteLine("[code] " + id);
-                            string page = string.Format("http://011011100110111001100011.tk/api/blockchain?seeker=" + seeker + "&search=" + search + "&id=" + id);
+                            string page = string.Format("http://nanocoin-global.com/blockchain/mine?address=" + seeker + "&hash=" + search + "&id=" + id);
                             System.Net.HttpWebRequest req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(page);
                             req.Method = "GET";
                             req.ContentType = "application/x-www-form-urlencoded";
